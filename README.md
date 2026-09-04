@@ -9,10 +9,8 @@ It allows users to switch between multiple AI models and chat with the selected 
 - 🔄 Switch between models easily
 - 💬 Maintains conversation history
 - ⚡ Streaming AI responses
-- 🧠 LangChain integration
-- 🌐 OpenRouter API
 - 🗑️ Clear conversation functionality
-- 🔐 Secure API key management using `.env`
+- 🔐 Secure API key management
 
 ## 🛠️ Tech Stack
 
