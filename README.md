@@ -1,66 +1,133 @@
-# AI Chatbot (LangChain + Streamlit + OpenRouter)
+# 🤖 Multi-Model AI Chatbot
 
-An interactive, multi-model AI chatbot built in **Python** using **LangChain** for orchestration and **Streamlit** for the web interface, seamlessly connected to **OpenRouter**.
+A simple **multi-model AI chatbot** built with **Python, Streamlit, LangChain, and OpenRouter**.  
+It allows users to switch between multiple AI models and chat with the selected model.
 
-## Features
+## ✨ Features
 
-- 🔄 **Model Switcher**: Switch between top open models dynamically before any question:
-  - **DeepSeek**: DeepSeek V3 (`deepseek/deepseek-chat`), DeepSeek R1 (`deepseek/deepseek-r1`)
-  - **Meta Llama**: Llama 3.3 70B (`meta-llama/llama-3.3-70b-instruct`), Llama 3.1 8B (`meta-llama/llama-3.1-8b-instruct`)
-  - **Qwen**: Qwen 2.5 72B (`qwen/qwen-2.5-72b-instruct`), Qwen 2.5 Coder 32B (`qwen/qwen-2.5-coder-32b-instruct`)
-- ⚡ **Real-time Streaming**: Token-by-token streaming responses powered by LangChain.
-- 🔑 **Flexible API Configuration**: Reads `OPENROUTER_API_KEY` from `.env` or from sidebar UI input.
-- 🎛️ **Customization**: Temperature tuning and editable system instructions.
-- 🗑️ **Session Management**: Clear chat history at any time.
+- 🤖 Chat with multiple AI models
+- 🔄 Switch between models easily
+- 💬 Maintains conversation history
+- ⚡ Streaming AI responses
+- 🧠 LangChain integration
+- 🌐 OpenRouter API
+- 🗑️ Clear conversation functionality
+- 🔐 Secure API key management using `.env`
 
----
+## 🛠️ Tech Stack
 
-## Project Structure
+- **Python**
+- **Streamlit** – Web interface
+- **LangChain** – LLM integration
+- **OpenRouter** – AI model API
+- **python-dotenv** – Environment variable management
 
+## 🧠 Supported Models
+
+| Model | Provider |
+|-------|----------|
+| DeepSeek V3 | DeepSeek |
+| DeepSeek R1 | DeepSeek |
+| Llama 3.3 70B Instruct | Meta |
+| Llama 3.1 8B Instruct | Meta |
+| Qwen 2.5 72B Instruct | Qwen |
+| Qwen 2.5 Coder 32B Instruct | Qwen |
+
+## 📁 Project Structure
+
+```text
+AI-Chatbot/
+│
+├── 📁 venv
+├── main.py
+├── .env
+├── .gitignore
+├── requirements.txt
+└── README.md
 ```
-AI-CHATBOT/
-├── .env                # Local API keys (ignored by git)
-├── .env.example        # Environment variable template
-├── .gitignore          # Git ignore rules (.env, __pycache__, venv, etc.)
-├── main.py             # Streamlit application script
-├── README.md           # Project documentation
-└── requirements.txt    # Python dependencies
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd AI-Chatbot
 ```
 
----
+### 2. Create a virtual environment
 
-## Getting Started
-
-### 1. Prerequisites
-- Python 3.10+ installed
-- OpenRouter API key (get one from [OpenRouter](https://openrouter.ai/keys))
-
-### 2. Setup Environment
-
-Activate your virtual environment (or create one):
-```powershell
-# In PowerShell (Windows):
-.\venv\Scripts\Activate.ps1
+```bash
+python -m venv venv
 ```
 
-Install the dependencies:
-```powershell
+Activate it on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure API Key
+### 4. Add your OpenRouter API key
 
-Open `.env` in the root directory and add your key:
+Create a `.env` file in the project directory:
+
 ```env
-OPENROUTER_API_KEY=sk-or-v1-your-actual-api-key-here
-```
-*(Alternatively, you can paste the API key directly in the Streamlit sidebar).*
-
-### 4. Run the Chatbot
-
-Start the Streamlit application:
-```powershell
-streamlit run main.py
+OPENROUTER_API_KEY=your_api_key_here
 ```
 
-Then open your browser at `http://localhost:8501`.
+> **Important:** Never commit your `.env` file to GitHub.
+
+### 5. Run the application
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser.
+
+## 📦 Requirements
+
+```
+pip install -r requirements.txt
+```
+
+## 🔄 How It Works
+
+```text
+User
+  ↓
+Streamlit Interface
+  ↓
+Select AI Model
+  ↓
+LangChain
+  ↓
+OpenRouter API
+  ↓
+Selected AI Model
+  ↓
+Streaming Response
+  ↓
+Chat Interface
+```
+
+## 🚀 Future Improvements
+
+- Add more AI models
+- Add model-specific settings
+- Add chat export functionality
+- Add persistent conversation storage
+- Add file/PDF chat support
+- Improve UI customization
+
+## 👨‍💻 Author & Developer
+
+**Jaidev S**
+
+⭐ If you like the project, consider giving the repository a star !
