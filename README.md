@@ -1,6 +1,6 @@
 # 🤖 Multi-Model AI Chatbot
 
-A simple **Multi - model AI Chatbot** built with **Python, Streamlit, LangChain and OpenRouter**.  
+A simple **Multi - Model AI Chatbot** built with **Python, Streamlit, LangChain and OpenRouter**.  
 It allows users to switch between multiple AI models and chat with the selected model.
 
 ## ✨ Features
@@ -77,7 +77,7 @@ OPENROUTER_API_KEY = your_api_key_here
 ### 4. Run the application
 
 ```bash
-streamlit run app.py
+streamlit run main.py
 ```
 
 The application will open in your browser.
