@@ -17,10 +17,10 @@ It allows users to switch between multiple AI models and chat with the selected 
 ## 🛠️ Tech Stack
 
 - **Python**
-- **Streamlit** – Web interface
-- **LangChain** – LLM integration
-- **OpenRouter** – AI model API
-- **python-dotenv** – Environment variable management
+- **Streamlit**
+- **LangChain**
+- **OpenRouter**
+- **python-dotenv** 
 
 ## 🧠 Supported Models
 
@@ -51,8 +51,8 @@ AI-Chatbot/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd AI-Chatbot
+git clone https://github.com/JD-Jaidev/AI-CHATBOT
+cd AI-CHATBOT
 ```
 
 ### 2. Create a virtual environment
@@ -67,23 +67,15 @@ Activate it on Windows:
 venv\Scripts\activate
 ```
 
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Add your OpenRouter API key
+### 3. Add your OpenRouter API key
 
 Create a `.env` file in the project directory:
 
 ```env
-OPENROUTER_API_KEY=your_api_key_here
+OPENROUTER_API_KEY = your_api_key_here
 ```
 
-> **Important:** Never commit your `.env` file to GitHub.
-
-### 5. Run the application
+### 4. Run the application
 
 ```bash
 streamlit run app.py
