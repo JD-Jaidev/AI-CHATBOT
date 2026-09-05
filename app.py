@@ -125,3 +125,29 @@ if prompt:
 
         except Exception as e:
             st.error(f"Error communicating with OpenRouter: {str(e)}")
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------
+
+'''
+
+1. Example for session_state and session_state.messages -
+st.session_state = {
+    "messages": [
+        {"role": "user", "content": "What is Python?"},
+        {"role": "assistant", "content": "Python is a programming language..."},
+        {"role": "user", "content": "Give me an example"},
+        {"role": "assistant", "content": "Sure! print('Hello World')"}
+    ]
+}
+
+
+2. Example for langchain_messages -
+[
+    SystemMessage(content="You are a helpful..."),
+    HumanMessage(content="What is Python?"),
+    AIMessage(content="Python is a programming language."),
+    HumanMessage(content="How do I install streamlit?")
+]
+
+'''
