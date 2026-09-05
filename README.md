@@ -24,7 +24,6 @@ It allows users to switch between multiple AI models and chat with the selected 
 | Model | Provider |
 |-------|----------|
 | DeepSeek V3 | DeepSeek |
-| DeepSeek R1 | DeepSeek |
 | Llama 3.3 70B Instruct | Meta |
 | Llama 3.1 8B Instruct | Meta |
 | Qwen 2.5 72B Instruct | Qwen |
