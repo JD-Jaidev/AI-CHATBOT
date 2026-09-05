@@ -89,7 +89,7 @@ if prompt:
             # Initialize LangChain LLM
             llm = get_langchain_model(API_KEY, model_id, TEMPERATURE)
             
-            # Build LangChain message list
+            # Build LangChain message list System Message + Conversational History
             langchain_messages = [SystemMessage(content=SYSTEM_PROMPT)]
 
             # Only send last 6 messages
