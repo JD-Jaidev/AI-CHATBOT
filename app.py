@@ -26,13 +26,13 @@ AVAILABLE_MODELS = {
 # Constants
 TEMPERATURE = 0.7
 SYSTEM_PROMPT = "You are a helpful, knowledgeable, and polite AI assistant. Provide concise and well-structured answers."
-API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # --- Main Application ---
 st.title("🤖 Multi-Model AI Chatbot")
 
 # Check for API Key early
-if not API_KEY:
+if not API_KEY: 
     st.error("❌ OpenRouter API Key not found. Please add `OPENROUTER_API_KEY` to your `.env` file.")
     st.stop()
 
@@ -41,7 +41,7 @@ col1, col2 = st.columns([3, 1], vertical_alignment = "bottom")
 with col1:
     selected_model_name = st.selectbox(
         "Select AI Model:",
-        options=list(AVAILABLE_MODELS.keys()),
+        options = list(AVAILABLE_MODELS.keys()),
         index = 0
     )
 with col2:
@@ -89,13 +89,26 @@ if prompt:
             # Initialize LangChain LLM
             llm = get_langchain_model(API_KEY, model_id, TEMPERATURE)
             
-            # Build LangChain message list with System Message + Conversation History
+            # Build LangChain message list
+            langchain_messages = [SystemMessage(content=SYSTEM_PROMPT)]
+
+            # Only send last 6 messages
+            recent_messages = st.session_state.messages[-6:]
+
+            for msg in recent_messages:
+                if msg["role"] == "user":
+                    langchain_messages.append(HumanMessage(content=msg["content"]))
+                elif msg["role"] == "assistant":
+                    langchain_messages.append(AIMessage(content=msg["content"]))
+
+
+            ''' # Build LangChain message list with System Message + Conversation History
             langchain_messages = [SystemMessage(content=SYSTEM_PROMPT)]
             for msg in st.session_state.messages:
                 if msg["role"] == "user":
                     langchain_messages.append(HumanMessage(content=msg["content"]))
                 elif msg["role"] == "assistant":
-                    langchain_messages.append(AIMessage(content=msg["content"]))
+                    langchain_messages.append(AIMessage(content=msg["content"])) '''
 
             # Stream response token by token
             def stream_response():
