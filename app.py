@@ -32,9 +32,8 @@ API_KEY = os.getenv("OPENROUTER_API_KEY")
 st.title("🤖 Multi-Model AI Chatbot")
 
 # Check for API Key early
-if not API_KEY: 
-    st.error("❌ OpenRouter API Key not found. Please add `OPENROUTER_API_KEY` to your `.env` file.")
-    st.stop()
+if not API_KEY:
+    API_KEY = st.secrets.get("OPENROUTER_API_KEY")
 
 # Model Selection at the top
 col1, col2 = st.columns([3, 1], vertical_alignment = "bottom")
@@ -125,29 +124,3 @@ if prompt:
 
         except Exception as e:
             st.error(f"Error communicating with OpenRouter: {str(e)}")
-
-
-#-----------------------------------------------------------------------------------------------------------------------------------------
-
-'''
-
-1. Example for session_state and session_state.messages -
-st.session_state = {
-    "messages": [
-        {"role": "user", "content": "What is Python?"},
-        {"role": "assistant", "content": "Python is a programming language..."},
-        {"role": "user", "content": "Give me an example"},
-        {"role": "assistant", "content": "Sure! print('Hello World')"}
-    ]
-}
-
-
-2. Example for langchain_messages -
-[
-    SystemMessage(content="You are a helpful..."),
-    HumanMessage(content="What is Python?"),
-    AIMessage(content="Python is a programming language."),
-    HumanMessage(content="How do I install streamlit?")
-]
-
-'''
