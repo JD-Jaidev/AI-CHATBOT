@@ -101,13 +101,7 @@ if prompt:
                     langchain_messages.append(AIMessage(content=msg["content"]))
 
 
-            ''' # Build LangChain message list with System Message + Conversation History
-            langchain_messages = [SystemMessage(content=SYSTEM_PROMPT)]
-            for msg in st.session_state.messages:
-                if msg["role"] == "user":
-                    langchain_messages.append(HumanMessage(content=msg["content"]))
-                elif msg["role"] == "assistant":
-                    langchain_messages.append(AIMessage(content=msg["content"])) '''
+            
 
             # Stream response token by token
             def stream_response():
