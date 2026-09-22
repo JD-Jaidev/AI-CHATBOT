@@ -3,6 +3,9 @@
 A simple **Multi - Model AI Chatbot** built with **Python, Streamlit, LangChain and OpenRouter**.  
 It allows users to switch between multiple AI models and chat with the selected model.
 
+## 📊 Live Demo
+[AI-Multi-Model-Chatbots](https://ai-multi-model-chatbot.streamlit.app/)
+
 ## ✨ Features
 
 - 🤖 Chat with multiple AI models
